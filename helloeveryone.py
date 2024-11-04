@@ -10,6 +10,11 @@
 name = input("What is your name?").strip().title()
 # name = name.strip().title() #Remove whitespace from string ##Trying to capatalize the user name!
 
-print(f"Hello, {name}")
+#splitting the  name
+
+first, last = name.split(" ")
+print(f"Hello, {first}")
 # print('Hello, i am using the "double quotes"');
 # print("Hello, this is using the blackslash \"Friend\"")
+
+
