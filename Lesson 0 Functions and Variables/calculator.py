@@ -8,4 +8,4 @@ y = float(input("Wht is your input for y?"))
 
 z = (round(x/y,3))
 
-print(f"{z}")
+print(f"{z: ,}")
