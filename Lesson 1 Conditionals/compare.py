@@ -15,5 +15,4 @@ elif x>y:
     print("x is greater than y")
 else:
     print("x is equal to y")
-# else:
-#     print (" I don't know what is going on here!")
+# 

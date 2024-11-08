@@ -7,7 +7,7 @@ while True:
         print("Grade B")
     elif score >=70:
         print("Grade C")
-    elif score >= 60:
+    elif sco45re >= 60:
         print("Grade D")
     else:
         print("You have failed!!")
