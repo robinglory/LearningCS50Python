@@ -27,7 +27,7 @@ def print_square(size):
         #for each brick in  row
         for j in range(size):
             #Print brick
-            print("### ",end = "")
+            print("###",end = "")
         print("")
 
 main()
