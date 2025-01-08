@@ -29,7 +29,7 @@ def main():
         except EOFError:
             # Break the loop when user inputs control-d (EOF)
             print()
-            break
+            break   
 
 if __name__ == "__main__":
     main()
