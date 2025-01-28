@@ -27,14 +27,15 @@
 
 # print(f"Hello my name is {sys.argv[1]}")
 
-import sys
-if len(sys.argv)<2:
-    sys.exit("Too few Arguments")
+# import sys
+# if len(sys.argv)<2:
+#     sys.exit("Too few Arguments")
 
-# for arg in sys.argv:
-#     print("Hello my name is ", arg)
+# # for arg in sys.argv:
+# #     print("Hello my name is ", arg)
 
-# print(sys.argv)
+# # print(sys.argv)
 
-for arg in sys.argv[1:]:
-    print("Hello my name is, ", arg)
+# for arg in sys.argv[1:]:
+#     print("Hello my name is, ", arg)
+
