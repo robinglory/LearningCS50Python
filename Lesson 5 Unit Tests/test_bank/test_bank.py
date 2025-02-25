@@ -6,14 +6,23 @@ def main():
     testing_Hello()
     testing_other()
 
-def testing_Hello():
-    assert value("Hello") == "$0"
+from bank import value
 
-def testing_h():
-    assert value("hello") == "$20"
+def test_hello():
+    assert value("Hello") == 0
+    assert value("hello") == 0
+    assert value("HELLO") == 0
 
-def testing_other():
-    assert value("Yan Naing") == "$100"
+def test_h():
+    assert value("hi") == 20
+    assert value("hey") == 20
+    assert value("hola") == 20
+
+def test_other():
+    assert value("Yan Naing") == 100
+    assert value("Good morning") == 100
+    assert value("123") == 100
 
 if __name__ == "__main__":
     main()
+

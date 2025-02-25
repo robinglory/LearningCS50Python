@@ -1,14 +1,15 @@
 def main():
-    greeting = input("Greeting: ").lower().strip()
-    value(greeting)
+    greeting = input("Greeting: ").strip()
+    print(f"${value(greeting)}")  # Format output in main()
+
 def value(greeting):
-    first_letter = greeting[0]
+    greeting = greeting.lower()
     if greeting.startswith("hello"):
-        print("$0");
-    elif first_letter == "h":
-        print("$20")
+        return 0  # Return int, not f-string
+    elif greeting.startswith("h"):
+        return 20
     else:
-        print("$100")
+        return 100
 
 if __name__ == "__main__":
     main()
