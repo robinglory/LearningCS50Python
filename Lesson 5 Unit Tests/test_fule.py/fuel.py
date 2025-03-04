@@ -15,7 +15,7 @@ def convert(a,b):
     result = int(round((a/b)* 100))
     return result
 
-def guage(percentage):
+def gauge(percentage):
     if percentage <= 1:
         return "E"
     elif percentage >= 99:
