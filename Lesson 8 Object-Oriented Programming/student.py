@@ -34,17 +34,67 @@
 # If we type input as Padma, Riven Claw, and Padma's parent is Riven Claw, the output will be: error: 'tuple' object does not support item assignment.
 # This is because we are trying to change the value of a tuple, which is immutable.
 
+# def main():
+#     student = get_student()
+#     if student[0] == "Padma":
+#         student[1] = "Riven Claw"
+
+#     print(f"Hello {student[0]}, you are in {student[1]} house! and your parent is {student[2]}")
+
+# def get_student():
+#     name = input("What is your name? ")
+#     house = input("What is your house? ")
+#     parent = input("What is your parent? ")
+#     return [name, house, parent]
+# if __name__ == "__main__":
+#     main()
+#But if we change the tuple to a list, we can change the value of the list.
+# This is because lists are mutable, which means we can change their values.
+
+
+# def main():
+#     student = get_student()
+#     if student["name"] == "Padma":
+#         student["house"] = "Riven Claw"
+#     print(f"Hello {student['name']}, you are in {student['house']} house!")
+
+# def get_student():
+#     name = input("What is your name? ")
+#     house = input("What is your house? ")
+#     return {
+#         "name":name,
+#         "house":house
+#     }
+
+# if __name__ == "__main__":
+#     main()
+# #But if we change the list to a dictionary, we can change the value of the dictionary.
+# # This is because dictionaries are mutable, which means we can change their values.
+# # But if we change the dictionary to a class, we can change the value of the class.
+# # This is because classes are mutable, which means we can change their values.
+
+class Student:
+    def __init__(self,name,house):
+        self.name = name
+        self.house = house
+    
+
 def main():
     student = get_student()
-    if student[0] == "Padma":
-        student[1] = "Riven Claw"
+    if student.name == "Padma":
+        student.house = "Riven Claw"
+    print(f"Hello {student.name}, you are in {student.house} house!")
 
-    print(f"Hello {student[0]}, you are in {student[1]} house! and your parent is {student[2]}")
-
+# def get_student():
+#     student = Student()
+#     student.name = input("What is your name? ")
+#     student.house = input("What is your house? ")
+#     return student
 def get_student():
-    name = input("What is your name? ")
-    house = input("What is your house? ")
-    parent = input("What is your parent? ")
-    return [name, house, parent]
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
 if __name__ == "__main__":
     main()
