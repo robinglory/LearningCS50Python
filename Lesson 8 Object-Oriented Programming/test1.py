@@ -103,3 +103,26 @@
 # print(my_player.del_song("One love","Bob Marley"))
 # print(my_player.play_song("Blinding Lights","The Weeknd"))
 # print(my_player.show_playlist())
+
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    
+    def printname(self):
+        return f"This person name is nothing but this '{self.first_name} {self.last_name}' "
+
+class Student(Person):
+    def __init__(self, first_name, last_name, graduation_year):
+        # Person.__init__(self, first_name, last_name)
+        super().__init__(first_name, last_name)
+        self.graduation_year = graduation_year
+
+    def welcome(self):
+        return f"Welcome {self.first_name} {self.last_name} to the class of {self.graduation_year}"  
+
+person1 = Person("John", "Doe")
+print(person1.printname())
+x = Student("Jane", "Doe", 2025)
+print(x.printname())
+print(x.welcome())
