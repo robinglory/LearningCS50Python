@@ -104,25 +104,137 @@
 # print(my_player.play_song("Blinding Lights","The Weeknd"))
 # print(my_player.show_playlist())
 
-class Person:
-    def __init__(self, first_name, last_name):
-        self.first_name = first_name
-        self.last_name = last_name
+## Inheritance Example
+# class Person:
+#     def __init__(self, first_name, last_name):
+#         self.first_name = first_name
+#         self.last_name = last_name
     
-    def printname(self):
-        return f"This person name is nothing but this '{self.first_name} {self.last_name}' "
+#     def printname(self):
+#         return f"This person name is nothing but this '{self.first_name} {self.last_name}' "
 
-class Student(Person):
-    def __init__(self, first_name, last_name, graduation_year):
-        # Person.__init__(self, first_name, last_name)
-        super().__init__(first_name, last_name)
-        self.graduation_year = graduation_year
+# class Student(Person):
+#     def __init__(self, first_name, last_name, graduation_year):
+#         # Person.__init__(self, first_name, last_name)
+#         super().__init__(first_name, last_name)
+#         self.graduation_year = graduation_year
 
-    def welcome(self):
-        return f"Welcome {self.first_name} {self.last_name} to the class of {self.graduation_year}"  
+#     def welcome(self):
+#         return f"Welcome {self.first_name} {self.last_name} to the class of {self.graduation_year}"  
 
-person1 = Person("John", "Doe")
-print(person1.printname())
-x = Student("Jane", "Doe", 2025)
-print(x.printname())
-print(x.welcome())
+# person1 = Person("John", "Doe")
+# print(person1.printname())
+# x = Student("Jane", "Doe", 2025)
+# print(x.printname())
+# print(x.welcome())
+
+## Polymorphism Example
+# class Dog:
+#     def __init__(self, name, breed):
+#         self.name = name
+#         self.breed = breed
+    
+#     def speak(self):
+#         return "Woof!"
+
+# class Cat:
+#     def __init__(self, name, breed):
+#         self.name = name
+#         self.breed = breed
+    
+#     def speak(self):
+#         return "Meow!"
+
+# class Monkey:
+#     def __init__(self, name, breed):
+#         self.name = name
+#         self.breed = breed
+    
+#     def speak(self):
+#         return "Ooh Ooh Aah Aah!"
+
+# dog = Dog("Buddy", "Golden Retriever")
+# cat = Cat("Whiskers", "Siamese")
+# monkey = Monkey("George", "Capuchin")
+
+# for x in (dog, cat, monkey):
+#     print(f"{x.name} says {x.speak()}")
+        
+
+# class Vehicle:
+#   def __init__(self, brand, model):
+#     self.brand = brand
+#     self.model = model
+
+#   def move(self):
+#     print("Move!")
+
+# class Car(Vehicle):
+#   pass
+
+# class Boat(Vehicle):
+#   def move(self):
+#     print("Sail!")
+
+# class Plane(Vehicle):
+#   def move(self):
+#     print("Fly!")
+
+# car1 = Car("Ford", "Mustang")       #Create a Car object
+# boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+# plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+# for x in (car1, boat1, plane1):
+#     print(f"{x.brand} {x.model}:", end=" ")
+#     x.move()
+
+## Encapsulation
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # Private attribute
+        self.__age = age    # Private attribute
+
+    def get_age(self):
+        return self.__age
+    
+    def set_age(self, age):
+        if age >= 18:
+            self.__age = age
+            return f"Age updated to {age} and you are eligible."
+        else:
+            return "Age must be at least 18."
+        
+    def __str__(self):
+        return f"Person(Name: {self.name}, Age: {self.__age})"
+    
+p1  = Person("Emily", "19")
+print(p1.name)      # Accessing public attribute
+print(p1.get_age()) # Accessing private attribute via getter
+print(p1) # Trying to set age to 17
+
+
+## Pythonic way
+class Person:
+    def __init__(self, name, age, job):
+        self.name = name  
+        self.age = age
+        self._job = job
+    
+    @property
+    def job(self):
+        return self._job
+    
+    @job.setter
+    def job(self, job):
+        if job in ["Engineer", "Doctor", "Artist"]:
+            self._job = job
+            return f"Job updated to {job}."
+        else:
+            raise ValueError("Invalid job. Choose from Engineer, Doctor, or Artist.")
+
+p2 =  Person("David", 25, "Engineer")
+print(p2.job)  # Accessing job via property
+p2.job = "Teacher"  # Trying to set an invalid job
+print(p2.job)
+
+
